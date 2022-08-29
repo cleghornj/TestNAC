@@ -40,15 +40,15 @@
         /************************************************************
          * Set the WebMap instance to the map property in a MapView.
          ************************************************************/
-        var view = new MapView({
+        const view = new MapView({
           map: webmap,
           container: "viewDiv"
         });
       });
 
       view.goTo({
-        center: -87.52673603392405, 36.532718563706574,
-        zoom: 24
+        center: "-87.52673603392405, 36.532718563706574",
+        zoom: "24"
       });
       
     </script>
