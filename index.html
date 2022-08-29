@@ -45,6 +45,14 @@
           container: "viewDiv"
         });
       });
+      const urlParams = new URLSearchParams(window.location.search);
+      let coords = urlParams.get("coords").split(",").map(Number);
+      let zoomLevel = urlParams.get("zoomLevel");
+      console.log(`zoom level ${zoomLevel} at ${coords}`);
+      view.goTo({
+        center: coords,
+        zoom: zoomLevel
+      });
     </script>
   </head>
 
