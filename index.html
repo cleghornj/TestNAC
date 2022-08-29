@@ -20,7 +20,7 @@
     <script src="https://js.arcgis.com/4.24/"></script>
 
     <script>
-      require(["esri/views/MapView", "esri/WebMap"], (MapView, WebMap) => {
+      require(["esri/views/MapView", "esri/WebMap", "esri/core/urlUtils"], (MapView, WebMap, urlUtils) => {
         /************************************************************
          * Creates a new WebMap instance. A WebMap must reference
          * a PortalItem ID that represents a WebMap saved to
@@ -40,7 +40,7 @@
         /************************************************************
          * Set the WebMap instance to the map property in a MapView.
          ************************************************************/
-        var view = new MapView({
+        const view = new MapView({
           map: webmap,
           container: "viewDiv"
         });
@@ -48,6 +48,7 @@
         center: [-87.52673603392405, 36.532718563706574],
         zoom: 14
         });
+        let myObject = urlUtils.urlToObject("http://www.myworld.com?state_name=Ohio&city_name=Akron");
       });
 
 
